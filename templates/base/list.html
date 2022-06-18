@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>List of Employees</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+          {% if request.user.is_authenticated %}
+                <div class="navbar-brand">
+          {{ request.user }}
+                    </div>
+        <a class="navbar-brand" href="{% url 'logout' %}">Log out</a>
+
+          {% else %}
+            <a class="navbar-brand" href="{% url 'login' %}">Login</a>
+
+          {% endif %}
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+
+
+        <form method="POST">
+            {% csrf_token %}
+
+        <input type="search" placeholder="Employee ID" name="ID">
+        <input type="search" placeholder="Full name" name="fullname">
+        <input type="search" placeholder="Position" name="pos">
+        <input type="search" placeholder="Employment date 2017-05-01" name="employdate">
+        <input type="search" placeholder="Salary" name="zp">
+        <input type="search" placeholder="Boss ID" name="boss">
+        <input type="submit" class="btn btn-primary">
+        <p style="">Если хочешь вернуться к списке всех сотрудников нажми на кнопку 'Отправить' при этом с пустыми полями</p>
+</form>
+
+    <table style="width:100%">
+<tr>
+              <form method="get">
+
+                <th><a href="{% url 'list' %}?type=id&order=asc" type="submit" name="ID_sorting">ID</a>
+                <a href="{% url 'list' %}?type=id&order=desc" type="submit" name="ID_sorting">(наоборот)</a></th>
+
+                <th><a href="{% url 'list' %}?type=full_name&order=asc" type="submit" name=fullname_sorting">Full name</a>
+                <a href="{% url 'list' %}?type=full_name&order=desc" type="submit" name=fullname_sorting">(наоборот)</a></th>
+
+
+                <th><a href="{% url 'list' %}?type=position&order=asc" type="submit" name=position_sorting">Position</a>
+                    <a href="{% url 'list' %}?type=position&order=desc" type="submit" name=position_sorting">(наоборот)</a></th>
+
+                <th><a href="{% url 'list' %}?type=employment_date&order=asc" type="submit" name=employmentdate_sorting">Employment date</a>
+                <a href="{% url 'list' %}?type=employment_date&order=desc" type="submit" name=employmentdate_sorting">(наоборот)</a></th>
+
+                <th><a href="{% url 'list' %}?type=salary&order=asc" type="submit" name=salary_sorting">Salary</a>
+                    <a href="{% url 'list' %}?type=salary&order=desc" type="submit" name=salary_sorting">(наоборот)</a></th>
+
+                <th><a href="{% url 'list' %}?type=boss&order=asc" type="submit" name=boss_sorting">Boss</a>
+                    <a href="{% url 'list' %}?type=boss&order=desc" type="submit" name=boss_sorting">(наоборот)</a></th>
+
+              </form>
+          </tr>
+
+            {% for i in data %}
+
+              <tr>
+                <td>{{ i.id }}</td>
+                <td>{{ i.full_name }}</td>
+                <td>{{ i.position }}</td>
+                <td>{{ i.employment_date }}</td>
+                <td>{{ i.salary }}</td>
+                <td>ID: {{ i.boss.id }} {{ i.boss }}</td>
+              </tr>
+
+
+            {% endfor %}
+    </table>
+
+
+
+</body>
+</html>
