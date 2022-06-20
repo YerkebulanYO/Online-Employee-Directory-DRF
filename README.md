@@ -18,11 +18,11 @@ password: 13579_Q1
 
 http://127.0.0.1:8000/api/v1/employees/?ordering=id
 
-Фильтр:
+Фильтр пример:
 
 http://127.0.0.1:8000/api/v1/employees/?position=Intern
 
-PUT and DELETE вместо цифра ставите id сотрудника:
+PUT and DELETE вместо цифра ставите id сотрудника, например:
 
 http://127.0.0.1:8000/api/v1/employees/1/
 
