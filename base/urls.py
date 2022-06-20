@@ -1,8 +1,7 @@
 from django.urls import path, include
 from . import views
-from .views import ClientLoginView, ClientRegister, EmployeeList
+from .views import EmployeeList
 from . import views
-from django.contrib.auth.views import LogoutView
 from rest_framework import routers
 
 router = routers.SimpleRouter()
