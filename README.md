@@ -7,7 +7,8 @@ git clone https://github.com/YerkebulanYO/Online-Employee-Directory-DRF.git
 
 пишем команду python3 manage.py runserver или python manage.py runserver
 
-переходим в ссылку http://127.0.0.1:8000/
+переходим в ссылку http://127.0.0.1:8000/api/v1/employees/
 
-
-http://127.0.0.1:8000/api/v1/employees/
+Пройдите аутентификацию 
+login: AccountToCheck 
+password: 13579_Q1
