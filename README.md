@@ -21,3 +21,7 @@ http://127.0.0.1:8000/api/v1/employees/?ordering=id
 Фильтр:
 
 http://127.0.0.1:8000/api/v1/employees/?position=Intern
+
+PUT and DELETE вместо цифра ставите id сотрудника:
+
+http://127.0.0.1:8000/api/v1/employees/1/
