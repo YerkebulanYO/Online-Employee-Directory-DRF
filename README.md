@@ -13,3 +13,11 @@ git clone https://github.com/YerkebulanYO/Online-Employee-Directory-DRF.git
 login: AccountToCheck1
 
 password: 13579_Q1
+
+Сортировку можно произвести через ordering например:
+
+http://127.0.0.1:8000/api/v1/employees/?ordering=id
+
+Фильтр:
+
+http://127.0.0.1:8000/api/v1/employees/?position=Intern
