@@ -10,5 +10,6 @@ git clone https://github.com/YerkebulanYO/Online-Employee-Directory-DRF.git
 переходим в ссылку http://127.0.0.1:8000/api/v1/employees/
 
 Пройдите аутентификацию 
-login: AccountToCheck 
+login: AccountToCheck1
+
 password: 13579_Q1
