@@ -1,6 +1,4 @@
-# Online-Employee-Directory-DRF
-
-Онлайн каталог сотрудников на Django REST Framework
+# Онлайн каталог сотрудников на Django REST Framework
 
 Скачиваем проект через
 
