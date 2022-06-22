@@ -1,4 +1,7 @@
 # Online-Employee-Directory-DRF
+
+Онлайн каталог сотрудников на Django REST Framework
+
 Скачиваем проект через
 
 git clone https://github.com/YerkebulanYO/Online-Employee-Directory-DRF.git
